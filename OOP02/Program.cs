@@ -120,8 +120,76 @@
              
              */
             #endregion
+            #endregion
+
+            #region Part 02 : Practical (Extending the Movie Ticket Booking System)
+           
+
+               Cinema C = new Cinema();
 
 
+            Console.WriteLine("========== Ticket Booking ==========");
+            List<Ticket> tickets = new List<Ticket>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"Enter data for Ticket {i + 1}:");
+
+
+                Ticket ti1 = new Ticket();
+                Console.Write("Enter Movie Name :");
+                ti1.MovieName = Console.ReadLine();
+
+                Console.Write("Enter Type (0=Standard, 1=VIP, 2=IMAX):");
+                ti1.Type = (TicketType)int.Parse(Console.ReadLine());
+
+                Console.Write("Enter Seat Row (A-Z):");
+                char row = char.Parse(Console.ReadLine());
+
+                Console.Write("Enter Seat Number:");
+                int num = int.Parse(Console.ReadLine());
+                ti1.Seat = new SeatLocation(row, num);
+
+                Console.WriteLine("Enter Price ");
+                ti1.Price = double.Parse(Console.ReadLine());
+
+                C.AddTicket(ti1);
+            }
+
+            Console.WriteLine("------------ All Tickets  --------");
+
+            foreach (var t in tickets)
+            {
+                Console.WriteLine(
+                    $"Ticket | {t.MovieName} | {t.Type} " +
+                    $"| Seat: {t.Seat.Row}-{t.Seat.Number} " +
+                    $"| Price: {t.Price} EGP | After Tax: {t.PriceAfterTax:F1} EGP");
+            }
+
+         
+           // البحث عن فيلم
+            Console.Write("\nEnter movie name to search: ");
+            string searchName = Console.ReadLine();
+            Ticket found = C.GetMovieByMovieName(searchName);
+
+            if (found != null)
+                Console.WriteLine($"Found: {found.MovieName} in seat {found.Seat.Row}-{found.Seat.Number}");
+            else
+                Console.WriteLine("Movie not found.");
+
+            // د) طباعة إجمالي التذاكر
+            Console.WriteLine($"\nTotal Tickets Sold: {Ticket.GetTotalTicketsSold()}");
+
+            // توليد أرقام حجز
+            Console.WriteLine("\n--- Booking References ---");
+            Console.WriteLine(BookingHelper.GenerateBookingReference());
+            Console.WriteLine(BookingHelper.GenerateBookingReference());
+         
+
+            
+            double discountedPrice = BookingHelper.CalcGroupDiscount(5, 80);
+            Console.WriteLine($"\nGroup Discount (5 tickets * 80 EGP): {discountedPrice:F1} EGP");
+           
 
 
 
