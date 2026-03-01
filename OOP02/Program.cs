@@ -92,6 +92,35 @@
 
             #endregion
 
+            #region Q4:
+            /*
+             * a) What does the static keyword mean on TotalOrders? 
+             * How is it different from the Item field?
+             * 
+             * Meaning: The static keyword means that the field TotalOrders belongs to the class
+             * itself rather than a specific object (instance) of the class.
+             * All objects created from the Order class share this single variable.
+             * 
+             * Difference from Item:
+             * TotalOrders (Static): There is only one copy for the entire class.
+             * It is used here to keep track of the total number of orders across all instances.
+             *Item (Instance): Each object created has its own separate copy of the Item field. 
+             *If you have 10 orders, you have 10 different items, but only one TotalOrders count
+             *
+             *b) Can a static method inside Order access the Item field directly? Why or why not?
+             *
+             *No, a static method cannot access the Item field directly
+             *Why: Static methods belong to the class and are loaded even if no objects exist. 
+             *Since the Item field is an instance field (belongs to a specific object),
+             *the static method doesn't know which object's item it should access. 
+             *It can only access other static members.
+            
+             
+             
+             
+             */
+            #endregion
+
 
 
 
