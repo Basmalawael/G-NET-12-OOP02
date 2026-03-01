@@ -63,7 +63,32 @@
             */
             #endregion
 
-            #region Q3
+            #region Q3:
+            /*
+             * a) What is this[int index] called? Explain its purpose. 
+             *It is called an Indexer
+             *Purpose: It allows an instance of a class to be indexed just like an array.
+             *It provides a simplified syntax to access internal collection 
+             *data without exposing the collection itsel
+             *
+             *b) What happens if someone writes register[10] = "Ali";? 
+             *How would you make it safer?
+             *
+             * What happens: It will throw an IndexOutOfRangeException because
+             * the internal array names only has 5 elements (indices 0 to 4).
+             *
+             *How to make it safer: By adding validation logic inside the get and set 
+             *to check if the index is within the valid range (0 to 4) before accessing the array.
+             *
+             *c) Can a class have more than one indexer? If yes, give an example.
+             *
+             *Answer: Yes, a class can have multiple indexers as long as they have different 
+             *parameter types (Indexer Overloading).
+             *
+             *Example: A class could have one indexer that takes an int to find a student
+             *by their ID, and another indexer that takes a string to find a student by their name.
+             *
+             */
 
             #endregion
 
