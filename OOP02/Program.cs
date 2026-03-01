@@ -36,12 +36,36 @@
             */
             #endregion
 
+            #region Q2:
+            /*
+            *1 Difference Between Fields and Properties in C:
+            * 
+            Field: A field is a variable of any type that is declared directly in a class.
+            It is used to store data internally and is usually marked as private 
+            to follow encapsulation.
 
+            Property: A property is a member that provides a flexible mechanism to read, 
+            write, or compute the value of a private field.
+            It acts as a "wrapper" or "gatekeeper" for the field using 
+            get and set accessors.
 
+           *2 Can a property contain logic:
+           * 
+            Yes, a property can contain logic. 
+            Inside the get or set accessors, you can add validation, logging, or calculations.
+            For example, you can check if a value is positive before assigning it to a field in the set accessor.
+          
+           *3 Example: Read-only property with a calculated value:
+           * 
+            A read-only property only has a get accessor. It doesn't store a 
+            value itself but calculates it on the fly.
 
+            */
+            #endregion
 
+            #region Q3
 
-
+            #endregion
 
 
 
